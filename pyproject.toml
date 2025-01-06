@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "stock-news-analysis"
+version = "0.1.0"
+description = "Basic project in nlp for future Masters work"
+authors = ["Stepanov Semyon sestepanov_1@edu.hse.ru"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+pandas = "1.5.3"
+scikit-learn = "1.2.2"
+torch = "2.0.1"
+torchvision = "0.15.2"
+pytorch-lightning = "2.0.6"
+transformers = "4.32.1"
+torchmetrics = "1.0.1"
+pathlib = "1.0.1"
+wandb = "0.15.0"

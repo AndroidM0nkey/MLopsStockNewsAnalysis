@@ -1,0 +1,12 @@
+*.log
+logs/
+*.out
+*.err
+
+*.lock
+
+__pycache__/
+
+*.pth
+
+*.csv
