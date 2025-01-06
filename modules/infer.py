@@ -1,3 +1,5 @@
+import subprocess
+
 import torch
 from sklearn.preprocessing import LabelEncoder
 from train import SentimentClassifier
@@ -8,6 +10,8 @@ model_name = "bert-base-uncased"
 
 
 def prepare_model():
+    subprocess.run(["dvc", "pull", model_path])
+
     model = SentimentClassifier(model_name=model_name, num_classes=3)
     model.load_state_dict(
         torch.load(model_path, weights_only=True, map_location=torch.device("cpu"))

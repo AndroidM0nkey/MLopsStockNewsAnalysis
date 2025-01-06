@@ -1,3 +1,5 @@
+import subprocess
+
 import pandas as pd
 import pytorch_lightning as pl
 import torch
@@ -152,3 +154,8 @@ def train():
 
     model_path = "sentiment_model.pth"
     torch.save(model.state_dict(), model_path)
+
+    subprocess.run(["dvc", "add", model_path])
+    subprocess.run(["git", "add", model_path + ".dvc"])
+    subprocess.run(["git", "commit", "-m", "Add trained model to DVC"])
+    subprocess.run(["dvc", "push"])
